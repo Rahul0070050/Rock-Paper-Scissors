@@ -44,6 +44,7 @@ const ai = (playerId) => {
         document.getElementById("ai").src = img
         mark(playerId, id)
     }, 2000)
+
     setTimeout(() => {
         document.getElementById("me").src = 'https://semantic-ui.com/images/wireframe/image.png';
         document.getElementById("ai").src = 'https://semantic-ui.com/images/wireframe/image.png';
@@ -58,11 +59,9 @@ const random = () => {
 const mark = (playerId, id) => {
     if (playerId === id) {
         return showStatus(0)
-    } else if (playerId === 'rock' && id === 'paper') {
-        return showStatus(-1)
-    } else if (playerId === 'rock' && id === 'csissors') {
+    } else if (playerId === 'rock' && id === 'csissors' || playerId === 'paper' && id === 'rock' || playerId === 'csissors' && id === 'paper') {
         return showStatus(1)
-    } else if (playerId === 'paper' && id === 'scissors') {
+    } else if (playerId === 'csissors' && id === 'rock' || playerId === 'rock' && id === 'paper' || playerId === 'paper' && id === 'csissors') {
         return showStatus(-1)
     }
 }
