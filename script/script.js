@@ -24,11 +24,51 @@ options.map(item => {
     </div>
     `
 })
-document.getElementById("me").src = 'https://semantic-ui.com/images/wireframe/image.png'
-document.getElementById("ai").src = 'https://semantic-ui.com/images/wireframe/image.png'
-
+document.getElementById("me").src = 'https://semantic-ui.com/images/wireframe/image.png';
+document.getElementById("ai").src = 'https://semantic-ui.com/images/wireframe/image.png';
+let SELECTED = false
 const selected = (id) => {
-    console.log("hi");
-    const item = options.find(item => item.id === id)
-    document.getElementById("me").src = item.img
+    document.getElementById("ai").src = 'https://semantic-ui.com/images/wireframe/image.png';
+    if (!SELECTED) {
+        SELECTED = true
+        const item = options.find(item => item.id === id)
+        document.getElementById("me").src = item.img
+        ai(id);
+    }
+}
+
+const ai = (playerId) => {
+    setTimeout(() => {
+        SELECTED = false
+        let { id, img } = options[random()];
+        document.getElementById("ai").src = img
+        mark(playerId, id)
+    }, 2000)
+}
+
+const random = () => {
+    return Math.floor(Math.random() * 3)
+}
+
+
+const mark = (playerId, id) => {
+    if (playerId === id) {
+        return showStatus(0)
+    } else if ((playerId === 'rock' && id === 'paper') || (playerId === 'paper' && id === 'rock')) {
+        return showStatus(-1)
+    } else if ((playerId === 'rock' && id === 'csissors') || (playerId === 'csissors' && id === 'rock')) {
+        return showStatus(1)
+    } else if ((playerId === 'paper' && id === 'scissors') || (playerId === 'scissors' && id === 'paper')) {
+        return showStatus(-1)
+    }
+}
+
+const showStatus = (mark) => {
+    if (mark == 0) {
+        console.log("drow");
+    } else if (mark == -1) {
+        console.log("fail");
+    } else if (mark == 1) {
+        console.log("won");
+    }
 }
