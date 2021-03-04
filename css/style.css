@@ -42,8 +42,14 @@ header{
 }
 .play-ground #result{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 15px;
+    height: 250px;
+    width: 250px;
+}
+.play-ground #result img {
     height: 250px;
     width: 250px;
 }

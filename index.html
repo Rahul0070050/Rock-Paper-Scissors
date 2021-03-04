@@ -23,13 +23,14 @@
             </header>
             <div class="play-ground">
                 <div id="real-player">
-                    <h3><span>5/2</span> You</h3>
+                    <h3><span id="your-score">0/5</span> You</h3>
                     <img id="me" src="" alt="">
                 </div>
                 <div id="result">
+                    <img id="resultImage" alt="">
                 </div>
-                <div di=" ai-player">
-                    <h3><span>5/1</span> Ai</h3>
+                <div di="ai-player">
+                    <h3><span id="ai-score">0/5</span> Ai</h3>
                     <img id="ai" alt="">
                 </div>
             </div>
@@ -40,8 +41,8 @@
 
             </div>
             <div class="btns">
-                <button class="btn-danger">reset</button>
-                <button class="btn-primary">play</button>
+                <button class="btn-danger" onclick="return location.reload()">reset</button>
+                <button class="btn-primary" onclick="play()">play</button>
             </div>
         </div>
     </section>
