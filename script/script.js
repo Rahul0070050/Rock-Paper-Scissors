@@ -54,11 +54,11 @@ const random = () => {
 const mark = (playerId, id) => {
     if (playerId === id) {
         return showStatus(0)
-    } else if ((playerId === 'rock' && id === 'paper') || (playerId === 'paper' && id === 'rock')) {
+    } else if (playerId === 'rock' && id === 'paper') {
         return showStatus(-1)
-    } else if ((playerId === 'rock' && id === 'csissors') || (playerId === 'csissors' && id === 'rock')) {
+    } else if (playerId === 'rock' && id === 'csissors') {
         return showStatus(1)
-    } else if ((playerId === 'paper' && id === 'scissors') || (playerId === 'scissors' && id === 'paper')) {
+    } else if (playerId === 'paper' && id === 'scissors') {
         return showStatus(-1)
     }
 }
@@ -70,5 +70,5 @@ const showStatus = (mark) => {
         console.log("fail");
     } else if (mark == 1) {
         console.log("won");
+
     }
-}
