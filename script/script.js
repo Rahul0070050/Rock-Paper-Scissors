@@ -44,6 +44,10 @@ const ai = (playerId) => {
         document.getElementById("ai").src = img
         mark(playerId, id)
     }, 2000)
+    setTimeout(() => {
+        document.getElementById("me").src = 'https://semantic-ui.com/images/wireframe/image.png';
+        document.getElementById("ai").src = 'https://semantic-ui.com/images/wireframe/image.png';
+    }, 3500)
 }
 
 const random = () => {
