@@ -70,5 +70,5 @@ const showStatus = (mark) => {
         console.log("fail");
     } else if (mark == 1) {
         console.log("won");
-
     }
+}
