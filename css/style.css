@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    border: 5px solid gray;
+    height: 100%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+.underline{
+    height: 8px;
+    width: 150px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+}
+.play-ground{    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+    padding: 10px;
+    border: 3px solid darkgray;
+}
+.play-ground div h3 {
+    font-weight: 800;
+}
+.play-ground div {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(216, 116, 116);
+}
+.play-ground #result{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    height: 250px;
+    width: 250px;
+}
+.play-ground img {
+    height: 250px;
+    width: 250px;
+}
+.options{
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+.options div {
+    margin: 10px 0px;
+    height: 250px;
+    width: 250px;
+}
+.options img {
+    height: 250px;
+    width: 250px;
+}
+.option-info {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: darkgrey solid 3px;
+    margin: 50px 0;
+}
+button {
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 1010px) {
+    .play-ground{
+        height: auto;
+        padding: 35px 20px;
+    }
+    .play-ground img {
+        height: 150px;
+        width: 150px;
+    }
+    .play-ground div {
+        height: 150px;
+        width: 150px;
+        margin: 35px;
+    }
+    .play-ground #result{
+        height: 150px;
+        width: 150px;
+    }
+    .options img {
+        height: 150px;
+        width: 150px;
+    }
+    .options div{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 559px) {
+
+    .play-ground {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .play-ground div {
+        margin: 0.1rem;
+        height: 80px;
+        width: 80px;
+    }
+    .play-ground img {
+        height: 80px;
+        width: 80px;
+    }
+    .play-ground div h3 {
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .play-ground #result {
+        height: 90px;
+        width: 90px;
+    }
+    .options div {
+        height: 80px;
+        width: 80px;
+    }
+    .options img {
+        height: 80px;
+        width: 80px;
+    }
+}
+@media only screen and (max-width: 359px) {
+        .play-ground div:nth-child(2){
+        order: 1;
+    }
+    .play-ground div:nth-child(1){
+        order: 1;
+        margin: 10px;
+    }
+} 
